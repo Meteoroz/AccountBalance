@@ -18,6 +18,11 @@ namespace BusinessServicesLayer
             this.db = db;
         }
 
+        /// <summary>
+        /// Retrieve the account balance from the database
+        /// </summary>
+        /// <param name="accountName"></param>
+        /// <returns></returns>
         public AccountBalanceDTO GetAccountBalance(string accountName)
         {
             var account = db.Account.Include(a => a.Payment).FirstOrDefault(a => a.AccountName == accountName);
@@ -27,6 +32,7 @@ namespace BusinessServicesLayer
                 throw new Exception("Account not found");
             }
 
+            // Map to dtos
             var accountDto = new AccountBalanceDTO()
             {
                 AccountName = account.AccountName,

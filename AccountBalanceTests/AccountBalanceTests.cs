@@ -44,8 +44,6 @@ namespace AccountBalanceTests
         [Fact]
         public void AccountServiceShouldReturnValidResult()
         {
-            
-
             // Arrange
             var bs = new AccountService(dbMockContext.Object);
 

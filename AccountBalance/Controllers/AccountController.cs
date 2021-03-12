@@ -23,6 +23,11 @@ namespace AccountBalance.Controllers
             this._logger = logger;
         }
 
+        /// <summary>
+        /// Retrieve account balance and payment details for a user
+        /// </summary>
+        /// <param name="accountName"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{accountName}")]
         public ActionResult Get(string accountName)
